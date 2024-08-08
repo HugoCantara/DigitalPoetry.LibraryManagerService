@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,13 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DependencyInjection\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\DigitalPoetry.LibraryManager.Service.Application\DigitalPoetry.LibraryManager.Service.Application.csproj" />
     <ProjectReference Include="..\DigitalPoetry.LibraryManager.Service.Domain\DigitalPoetry.LibraryManager.Service.Domain.csproj" />
     <ProjectReference Include="..\DigitalPoetry.LibraryManager.Service.InfraData\DigitalPoetry.LibraryManager.Service.Infra.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DependencyInjection\" />
   </ItemGroup>
 
 </Project>
