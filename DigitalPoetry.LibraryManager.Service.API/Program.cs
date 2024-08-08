@@ -16,7 +16,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BookLoanManagementService.API v1"));
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DigitalPoetry.LibrayManagerService.API v1"));
 }
 
 app.UseHttpsRedirection();
@@ -30,6 +30,6 @@ app.Run();
 void AddSwaggerDocumentation(SwaggerGenOptions o)
 {
     var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    o.SwaggerDoc("v1", new OpenApiInfo { Title = "BookLoanManagementService.API", Version = "v1" });
+    o.SwaggerDoc("v1", new OpenApiInfo { Title = "DigitalPoetry.LibrayManagerService.API", Version = "v1" });
     o.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
 }
