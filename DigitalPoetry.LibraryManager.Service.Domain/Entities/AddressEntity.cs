@@ -69,6 +69,9 @@
         public bool Status { get; private set; }
 
         /// <summary>Address Entity Constructor</summary>
+        public AddressEntity() { }
+
+        /// <summary>Address Entity Constructor</summary>
         /// <param name="id">Address Identifier</param>
         /// <param name="countryId">Country Identifier</param>
         /// <param name="districtId">District Identifier</param>

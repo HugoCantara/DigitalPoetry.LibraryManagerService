@@ -3,25 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalPoetry.LibraryManager.Service.API", "DigitalPoetry.LibraryManager.Service.API\DigitalPoetry.LibraryManager.Service.API.csproj", "{FEAB9BCF-A4B2-44D9-B1AF-71ED85961FF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalPoetry.LibraryManager.Service.API", "DigitalPoetry.LibraryManager.Service.API\DigitalPoetry.LibraryManager.Service.API.csproj", "{FEAB9BCF-A4B2-44D9-B1AF-71ED85961FF8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. API", "1. API", "{45680779-B7B4-4100-884C-05773F743BC2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Domain", "2. Domain", "{B13C7378-8129-41BE-94E9-76480CD9B05D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalPoetry.LibraryManager.Service.Domain", "DigitalPoetry.LibraryManager.Service.Domain\DigitalPoetry.LibraryManager.Service.Domain.csproj", "{D386FF63-4CF6-4984-B313-C6DCE7FE7583}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalPoetry.LibraryManager.Service.Domain", "DigitalPoetry.LibraryManager.Service.Domain\DigitalPoetry.LibraryManager.Service.Domain.csproj", "{D386FF63-4CF6-4984-B313-C6DCE7FE7583}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Application", "3. Application", "{452C604A-89D1-420D-B554-02B0CF08D970}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalPoetry.LibraryManager.Service.Application", "DigitalPoetry.LibraryManager.Service.Application\DigitalPoetry.LibraryManager.Service.Application.csproj", "{946551DC-3BBD-4ED7-8CB3-01D4691F34CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalPoetry.LibraryManager.Service.Application", "DigitalPoetry.LibraryManager.Service.Application\DigitalPoetry.LibraryManager.Service.Application.csproj", "{946551DC-3BBD-4ED7-8CB3-01D4691F34CB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Data", "4. Data", "{15C3946D-F7E0-4371-8931-C93B3FEF99AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalPoetry.LibraryManager.Service.Infra.Data", "DigitalPoetry.LibraryManager.Service.InfraData\DigitalPoetry.LibraryManager.Service.Infra.Data.csproj", "{F8577E08-1904-4752-93DD-A5C7325A3057}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalPoetry.LibraryManager.Service.Infra.Data", "DigitalPoetry.LibraryManager.Service.InfraData\DigitalPoetry.LibraryManager.Service.Infra.Data.csproj", "{F8577E08-1904-4752-93DD-A5C7325A3057}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. IoC", "5. IoC", "{8BB33EDF-399A-4E92-BD42-F4D18DDAE975}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalPoetry.LibraryManager.Service.Infra.IoC", "DigitalPoetry.LibraryManager.Service.Infra.IoC\DigitalPoetry.LibraryManager.Service.Infra.IoC.csproj", "{8DAD58FD-E310-40D5-BF6F-6F3B35C2D6D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalPoetry.LibraryManager.Service.Infra.IoC", "DigitalPoetry.LibraryManager.Service.Infra.IoC\DigitalPoetry.LibraryManager.Service.Infra.IoC.csproj", "{8DAD58FD-E310-40D5-BF6F-6F3B35C2D6D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. Tests", "6. Tests", "{AE5297D3-5CD3-447D-B781-193957F3B5D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalPoetry.LibraryManager.Service.Tests", "DigitalPoetry.LibraryManager.Service.Tests\DigitalPoetry.LibraryManager.Service.Tests.csproj", "{4AAFD2EF-DEB0-4A1F-B086-11959A736530}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +53,10 @@ Global
 		{8DAD58FD-E310-40D5-BF6F-6F3B35C2D6D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DAD58FD-E310-40D5-BF6F-6F3B35C2D6D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DAD58FD-E310-40D5-BF6F-6F3B35C2D6D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AAFD2EF-DEB0-4A1F-B086-11959A736530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AAFD2EF-DEB0-4A1F-B086-11959A736530}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AAFD2EF-DEB0-4A1F-B086-11959A736530}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AAFD2EF-DEB0-4A1F-B086-11959A736530}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +67,7 @@ Global
 		{946551DC-3BBD-4ED7-8CB3-01D4691F34CB} = {452C604A-89D1-420D-B554-02B0CF08D970}
 		{F8577E08-1904-4752-93DD-A5C7325A3057} = {15C3946D-F7E0-4371-8931-C93B3FEF99AE}
 		{8DAD58FD-E310-40D5-BF6F-6F3B35C2D6D2} = {8BB33EDF-399A-4E92-BD42-F4D18DDAE975}
+		{4AAFD2EF-DEB0-4A1F-B086-11959A736530} = {AE5297D3-5CD3-447D-B781-193957F3B5D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {80A2D53F-4FC6-468A-AE9E-528DFE0FF9AC}
