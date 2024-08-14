@@ -1,3 +1,4 @@
+using DigitalPoetry.LibraryManager.Service.Infra.IoC.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
@@ -9,6 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(o => AddSwaggerDocumentation(o));
+
+/// <summary>Add repositories</summary>
+builder.Services.AddRepositories();
 
 var app = builder.Build();
 
