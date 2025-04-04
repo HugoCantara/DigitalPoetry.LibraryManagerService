@@ -8,15 +8,15 @@
     {
         /// <summary>Primary Key Loan Identifier</summary>
         [IgnoreDataMember]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>Foreign Key Client Identifier</summary>
         [Required]
-        public int ClientId { get; set; }
+        public Guid ClientId { get; set; }
 
         /// <summary>Foreign Key Book Identifier</summary>
         [Required]
-        public int BookId { get; set; }
+        public Guid BookId { get; set; }
 
         /// <summary>Loan Date</summary>
         [Required]

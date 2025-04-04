@@ -8,15 +8,15 @@
     {
         /// <summary>Primary Key Contact Author Contact Type Identifier</summary>
         [IgnoreDataMember]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>Foreign Key Contact Author Identifier</summary>
         [Required]
-        public int ContactAuthorId { get; set; }
+        public Guid ContactAuthorId { get; set; }
 
         /// <summary>Foreign Key Contact Type Identifier</summary>
         [Required]
-        public int ContactTypeId { get; set; }
+        public Guid ContactTypeId { get; set; }
 
         /// <summary>Is Principal Contact</summary>
         [Required]

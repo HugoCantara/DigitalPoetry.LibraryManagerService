@@ -9,44 +9,17 @@
     /// <summary>Generic Repository</summary>
     public class GenericRepository<T> : IDisposable, IGenericRepository<T> where T : class
     {
-        private bool disposed = false;
+        private readonly IDisposeDatabase _disposeDatabase;
+
+        public GenericRepository(IDisposeDatabase disposeDatabase)
+        {
+            _disposeDatabase = disposeDatabase;
+        }
 
         public void Dispose()
         {
-            Dispose(true);
+            _disposeDatabase.DisposedData(true);
             GC.SuppressFinalize(this);
-        }
-
-        private void Dispose(bool disposing)
-        {
-            if (!this.disposed)
-            {
-                if (disposing)
-                {
-                    //_context.Dispose();
-                }
-            }
-            this.disposed = true;
-        }
-
-        public void Add(T entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<T> AddAsync(T entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(T entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<T> DeleteAsync(T entity)
-        {
-            throw new NotImplementedException();
         }
 
         public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = "")
@@ -64,6 +37,16 @@
             throw new NotImplementedException();
         }
 
+        public void Add(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T> AddAsync(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(T entity)
         {
             throw new NotImplementedException();
@@ -73,5 +56,15 @@
         {
             throw new NotImplementedException();
         }
+
+        public void Delete(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T> DeleteAsync(T entity)
+        {
+            throw new NotImplementedException();
+        }  
     }
 }

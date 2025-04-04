@@ -1,6 +1,6 @@
 ﻿namespace DigitalPoetry.LibraryManager.Service.Application.DTOs
 {
-    using DigitalPoetry.LibraryManager.Service.Domain.Constants;
+    using DigitalPoetry.LibraryManager.Service.Domain.Messages;
     using System.ComponentModel.DataAnnotations;
     using System.Runtime.Serialization;
 
@@ -9,16 +9,16 @@
     {
         /// <summary>Primary Key District Identifier</summary>
         [IgnoreDataMember]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>Foreign Key Country Identifier</summary>
         [Required]
-        public int CountryId { get; set; }
+        public Guid CountryId { get; set; }
 
         /// <summary>District Description</summary>
         [Required]
-        [StringLength(50, ErrorMessage = EntityValidationConstants.DISTRICT_DESCRIPTION_LENGTH)]
-        public string Description { get; set; }
+        [StringLength(50, ErrorMessage = ErrorMessageConstants.DISTRICT_DESCRIPTION_LENGTH)]
+        public string? Description { get; set; }
 
         /// <summary>District Status</summary>
         [Required]

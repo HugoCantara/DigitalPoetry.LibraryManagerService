@@ -1,67 +1,57 @@
 ﻿namespace DigitalPoetry.LibraryManager.Service.Domain.Entities
 {
-    using DigitalPoetry.LibraryManager.Service.Domain.Constants;
     using DigitalPoetry.LibraryManager.Service.Domain.Enumerables;
     using DigitalPoetry.LibraryManager.Service.Domain.Extensions;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
 
-    /// <summary>Contact Client Entity</summary>
+    /// <summary>ContactClient Entity</summary>
     public class ContactClientEntity
     {
-        /// <summary>Contact Client Identifier</summary>
-        [Required]
-        [Column("Id")]
-        public int Id { get; private set; }
+        /// <summary>Primary Key ContactClient Identifier Property</summary>
+        public Guid Id { get; private set; }
 
-        /// <summary>Client Identifier</summary>
-        [Required]
-        [Column("ClientId")]
-        public int ClientId { get; private set; }
+        /// <summary>Foreign Kay Client Identifier Property</summary>
+        public Guid ClientId { get; private set; }
 
         /// <summary>Client Entity</summary>
         public ClientEntity Client { get; set; }
 
-        /// <summary>Contact Client Description</summary>
-        [Required]
-        [StringLength(50, ErrorMessage = EntityValidationConstants.CONTACT_CLIENT_DESCRIPTION_LENGTH)]
-        [Column("Description")]
+        /// <summary>Description Property</summary>
         public string Description { get; private set; }
 
-        /// <summary>Contact Client Contact Type Collection</summary>
+        /// <summary>ContactClientContactType Entity Collection</summary>
         public ICollection<ContactClientContactTypeEntity> ContactClientContactTypeCollection { get; set; }
 
-        /// <summary>Contact Client Entity Constructor</summary>
-        /// <param name="id">Contact Client Identifier</param>
-        /// <param name="clientId">Client Identifier</param>
-        /// <param name="description">Contact Client Description</param>
-        public ContactClientEntity(int id, int clientId, string description)
+        /// <summary>ContactClient Entity Constructor</summary>
+        /// <param name="id">Primary Key ContactClient Identifier Parameter</param>
+        /// <param name="clientId">Foreign Key Client Identifier Parameter</param>
+        /// <param name="description">Description Parameter</param>
+        public ContactClientEntity(Guid id, Guid clientId, string description)
         {
             this.Id = id.ValidateProperty(IdentifierPropertyEnum.ContactClientId);
             this.CreateAndValidate(clientId, description);
         }
 
-        /// <summary>Contact Client Entity Constructor</summary>
-        /// <param name="clientId">Client Identifier</param>
-        /// <param name="description">Contact Client Description</param>
-        public ContactClientEntity(int clientId, string description)
+        /// <summary>ContactClient Entity Constructor</summary>
+        /// <param name="clientId">Foreign Key Client Identifier Parameter</param>
+        /// <param name="description">Description Parameter</param>
+        public ContactClientEntity(Guid clientId, string description)
         {
             this.CreateAndValidate(clientId, description);
         }
 
-        /// <summary>Create and Validate Contact Client</summary>
-        /// <param name="clientId">Client Identifier</param>
-        /// <param name="description">Contact Client Description</param>
-        public void CreateAndValidate(int clientId, string description)
+        /// <summary>Create and Validate ContactClient</summary>
+        /// <param name="clientId">Foreign Key Client Identifier Parameter</param>
+        /// <param name="description">Description Parameter</param>
+        public void CreateAndValidate(Guid clientId, string description)
         {
             this.ClientId = clientId.ValidateProperty(IdentifierPropertyEnum.ClientId);
             this.Description = description.ValidateProperty(DescriptionPropertyEnum.DistrictDescription, 50);
         }
 
-        /// <summary>Update Contact Client</summary>
-        /// <param name="clientId">Client Identifier</param>
-        /// <param name="description">Contact Client Description</param>
-        public void Update(int clientId, string description)
+        /// <summary>Update ContactClient</summary>
+        /// <param name="clientId">Foreign Key Client Identifier Parameter</param>
+        /// <param name="description">Description Parameter</param>
+        public void Update(Guid clientId, string description)
         {
             this.CreateAndValidate(clientId, description);
         }   
