@@ -1,6 +1,6 @@
 ﻿namespace DigitalPoetry.LibraryManager.Service.Application.DTOs
 {
-    using DigitalPoetry.LibraryManager.Service.Domain.Constants;
+    using DigitalPoetry.LibraryManager.Service.Domain.Messages;
     using System.ComponentModel.DataAnnotations;
     using System.Runtime.Serialization;
 
@@ -9,15 +9,15 @@
     {
         /// <summary>Primary Key Contact Author Identifier</summary>
         [IgnoreDataMember]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>Foreign Key Author Identifier</summary>
         [Required]
-        public int AuthorId { get; set; }
+        public Guid AuthorId { get; set; }
 
         /// <summary>Contact Author Description</summary>
         [Required]
-        [StringLength(50, ErrorMessage = EntityValidationConstants.CONTACT_AUTHOR_DESCRIPTION_LENGTH)]
-        public string Description { get; private set; }
+        [StringLength(50, ErrorMessage = ErrorMessageConstants.CONTACT_AUTHOR_DESCRIPTION_LENGTH)]
+        public string? Description { get; set; }
     }
 }

@@ -8,15 +8,15 @@
     {
         /// <summary>Primary Key Contact Client Contact Type Identifier</summary>
         [IgnoreDataMember]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>Foreign Key Contact Client Identifier</summary>
         [Required]
-        public int ContactClientId { get; set; }
+        public Guid ContactClientId { get; set; }
 
         /// <summary>Foreign Key Contact Type Identifier</summary>
         [Required]
-        public int ContactTypeId { get; set; }
+        public Guid ContactTypeId { get; set; }
 
         /// <summary>Is Principal Contact</summary>
         [Required]

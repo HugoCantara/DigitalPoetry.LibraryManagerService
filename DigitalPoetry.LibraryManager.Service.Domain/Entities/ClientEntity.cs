@@ -1,46 +1,29 @@
 ﻿namespace DigitalPoetry.LibraryManager.Service.Domain.Entities
 {
-    using DigitalPoetry.LibraryManager.Service.Domain.Constants;
     using DigitalPoetry.LibraryManager.Service.Domain.Enumerables;
     using DigitalPoetry.LibraryManager.Service.Domain.Extensions;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
 
     /// <summary>Client Entity</summary>
     public class ClientEntity : PersonEntity
     {
-        /// <summary>Client Taxpayer Number</summary>
-        [Required]
-        [StringLength(9, ErrorMessage = EntityValidationConstants.CLIENT_TAXPAYER_NUMBER_LENGTH)]
-        [Column("TaxpayerNumber")]
+        /// <summary>TaxpayerNumber Property</summary>
         public string TaxpayerNumber { get; private set; }
 
-        /// <summary>Client Discriminator</summary>
-        [Required]
-        [Column("Discriminator")]
-        public string Discriminator
-        {
-            get
-            {
-                return "Client";
-            }
-        }
-
         /// <summary>Loan Entity Collection</summary>
-        public ICollection<LoanEntity> LoanEntityCollection { get; set; }
+        public ICollection<LoanEntity> LoanCollection { get; set; }
 
-        /// <summary>Contact Client Entity Collection</summary>
-        public ICollection<ContactClientEntity> ContactClientEntityCollection { get; set; }
+        /// <summary>ContactClient Entity Collection</summary>
+        public ICollection<ContactClientEntity> ContactClientCollection { get; set; }
 
         /// <summary>Client Entity Constructor</summary>
-        /// <param name="id">Client Identifier</param>
-        /// <param name="addressId">Address Identifier</param>
-        /// <param name="taxpayerNumber">Client Taxpayer Number</param>
-        /// <param name="firstName">Client First Name</param>
-        /// <param name="middleName">Client Middle Name</param>
-        /// <param name="lastName">Client Last Name</param>
-        /// <param name="status">Client Status</param>
-        public ClientEntity(int id, int addressId, string taxpayerNumber, string firstName, string middleName, string lastName, bool status)
+        /// <param name="id">Primary Key Client Identifier Parameter</param>
+        /// <param name="addressId">Foreign Key Address Identifier Parameter</param>
+        /// <param name="taxpayerNumber">Taxpayer Number Parameter</param>
+        /// <param name="firstName">First Name Parameter</param>
+        /// <param name="middleName">Middle Name Parameter</param>
+        /// <param name="lastName">Last Name Parameter</param>
+        /// <param name="status">Status Parameter</param>
+        public ClientEntity(Guid id, Guid addressId, string taxpayerNumber, string firstName, string middleName, string lastName, bool status)
             : base(id, addressId, firstName, middleName, lastName, status)
         {
             this.Id = id.ValidateProperty(IdentifierPropertyEnum.ClientId);
@@ -48,28 +31,28 @@
         }
 
         /// <summary>Client Entity Constructor</summary>
-        /// <param name="addressId">Address Identifier</param>
-        /// <param name="taxpayerNumber">Client Taxpayer Number</param>
-        /// <param name="firstName">Client First Name</param>
-        /// <param name="middleName">Client Middle Name</param>
-        /// <param name="lastName">Client Last Name</param>
-        /// <param name="status">Client Status</param>
-        public ClientEntity(int addressId, string taxpayerNumber, string firstName, string middleName, string lastName, bool status) 
+        /// <param name="addressId">Foreign Key Address Identifier Parameter</param>
+        /// <param name="taxpayerNumber">Taxpayer Number Parameter</param>
+        /// <param name="firstName">First Name Parameter</param>
+        /// <param name="middleName">Middle Name Parameter</param>
+        /// <param name="lastName">Last Name Parameter</param>
+        /// <param name="status">Status Parameter</param>
+        public ClientEntity(Guid addressId, string taxpayerNumber, string firstName, string middleName, string lastName, bool status) 
             : base(addressId, firstName, middleName, lastName, status)
         {
             this.CreateAndValidate(addressId, taxpayerNumber, firstName, middleName, lastName, status);
         }
 
-        /// <summary>Validate Client</summary>
-        /// <param name="addressId">Address Identifier</param>
-        /// <param name="taxpayerNumber">Client Taxpayer Number</param>
-        /// <param name="firstName">Client First Name</param>
-        /// <param name="middleName">Client Middle Name</param>
-        /// <param name="lastName">Client Last Name</param>
-        /// <param name="status">Client Status</param>
-        public void CreateAndValidate(int addressId, string taxpayerNumber, string firstName, string middleName, string lastName, bool status)
+        /// <summary>Create and Validate Client</summary>
+        /// <param name="addressId">Foreign Key Address Identifier Parameter</param>
+        /// <param name="taxpayerNumber">Taxpayer Number Parameter</param>
+        /// <param name="firstName">First Name Parameter</param>
+        /// <param name="middleName">Middle Name Parameter</param>
+        /// <param name="lastName">Last Name Parameter</param>
+        /// <param name="status">Status Parameter</param>
+        public void CreateAndValidate(Guid addressId, string taxpayerNumber, string firstName, string middleName, string lastName, bool status)
         {
-            int idAddress = addressId.ValidateProperty(IdentifierPropertyEnum.AddressId);
+            Guid idAddress = addressId.ValidateProperty(IdentifierPropertyEnum.AddressId);
             string clientFirstName = firstName.ValidateProperty(NamePropertyEnum.ClientFirstName, 50);
             string clientMiddleName = middleName.ValidateProperty(NamePropertyEnum.ClientMiddleName, 200);
             string clientLastName = lastName.ValidateProperty(NamePropertyEnum.ClientLastName, 50);
@@ -79,13 +62,13 @@
         }
 
         /// <summary>Update Client</summary>
-        /// <param name="addressId">Address Identifier</param>
-        /// <param name="taxpayerNumber">Client Taxpayer Number</param>
-        /// <param name="firstName">Client First Name</param>
-        /// <param name="middleName">Client Middle Name</param>
-        /// <param name="lastName">Client Last Name</param>
-        /// <param name="status">Client Status</param>
-        public void Update(int addressId, string taxpayerNumber, string firstName, string middleName, string lastName, bool status)
+        /// <param name="addressId">Foreign Key Address Identifier Parameter</param>
+        /// <param name="taxpayerNumber">Taxpayer Number Parameter</param>
+        /// <param name="firstName">First Name Parameter</param>
+        /// <param name="middleName">Middle Name Parameter</param>
+        /// <param name="lastName">Last Name Parameter</param>
+        /// <param name="status">Status Parameter</param>
+        public void Update(Guid addressId, string taxpayerNumber, string firstName, string middleName, string lastName, bool status)
         {
             this.CreateAndValidate(addressId, taxpayerNumber, firstName, middleName, lastName, status);
         }

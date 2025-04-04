@@ -1,6 +1,6 @@
 ﻿namespace DigitalPoetry.LibraryManager.Service.Application.DTOs
 {
-    using DigitalPoetry.LibraryManager.Service.Domain.Constants;
+    using DigitalPoetry.LibraryManager.Service.Domain.Messages;
     using System.ComponentModel.DataAnnotations;
     using System.Runtime.Serialization;
 
@@ -9,32 +9,32 @@
     {
         /// <summary>Primary Key Address Identifier</summary>
         [IgnoreDataMember]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>Foreign Key Country Identifier</summary>
         [Required]
-        public int CountryId { get; set; }
+        public Guid CountryId { get; set; }
 
         /// <summary>Foreign Key District Identifier</summary>
         [Required]
-        public int DistrictId { get; set; }
+        public Guid DistrictId { get; set; }
 
         /// <summary>Foreign Key County Identifier</summary>
         [Required]
-        public int CountyId { get; set; }
+        public Guid CountyId { get; set; }
 
         /// <summary>Foreign Key Parish Identifier</summary>
         [Required]
-        public int ParishId { get; set; }
+        public Guid ParishId { get; set; }
 
         /// <summary>Foreign Key City Identifier</summary>
         [Required]
-        public int CityId { get; set; }
+        public Guid CityId { get; set; }
 
         /// <summary>Address Description</summary>
         [Required]
-        [StringLength(200, ErrorMessage = EntityValidationConstants.ADDRESS_DESCRIPTION_LENGTH)]
-        public string Description { get; set; }
+        [StringLength(200, ErrorMessage = ErrorMessageConstants.ADDRESS_DESCRIPTION_LENGTH)]
+        public string? Description { get; set; }
 
         /// <summary>Is Principal Address</summary>
         [Required]

@@ -1,6 +1,6 @@
 ﻿namespace DigitalPoetry.LibraryManager.Service.Application.DTOs
 {
-    using DigitalPoetry.LibraryManager.Service.Domain.Constants;
+    using DigitalPoetry.LibraryManager.Service.Domain.Messages;
     using System.ComponentModel.DataAnnotations;
     using System.Runtime.Serialization;
 
@@ -9,26 +9,26 @@
     {
         /// <summary>Primary Key Client Identifier</summary>
         [IgnoreDataMember]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>Foreign Key Client Address Identifier</summary>
         [Required]
-        public int AddressId { get; set; }
+        public Guid AddressId { get; set; }
 
         /// <summary>Client First Name</summary>
         [Required]
-        [StringLength(50, ErrorMessage = EntityValidationConstants.CLIENT_FIRST_NAME_LENGTH)]
-        public string FirstName { get; set; }
+        [StringLength(50, ErrorMessage = ErrorMessageConstants.CLIENT_FIRST_NAME_LENGTH)]
+        public string? FirstName { get; set; }
 
         /// <summary>Client Middle Name</summary>
         [Required]
-        [StringLength(200, ErrorMessage = EntityValidationConstants.CLIENT_MIDDLE_NAME_LENGTH)]
-        public string MiddleName { get; set; }
+        [StringLength(200, ErrorMessage = ErrorMessageConstants.CLIENT_MIDDLE_NAME_LENGTH)]
+        public string? MiddleName { get; set; }
 
         /// <summary>Client Last Name</summary>
         [Required]
-        [StringLength(50, ErrorMessage = EntityValidationConstants.CLIENT_LAST_NAME_LENGTH)]
-        public string LastName { get; set; }
+        [StringLength(50, ErrorMessage = ErrorMessageConstants.CLIENT_LAST_NAME_LENGTH)]
+        public string? LastName { get; set; }
 
         /// <summary>Client Full Name</summary>
         [Required]
@@ -42,8 +42,8 @@
 
         /// <summary>Client Taxpayer Number</summary>
         [Required]
-        [StringLength(9, ErrorMessage = EntityValidationConstants.CLIENT_TAXPAYER_NUMBER_LENGTH)]
-        public string TaxpayerNumber { get; private set; }
+        [StringLength(9, ErrorMessage = ErrorMessageConstants.CLIENT_TAXPAYER_NUMBER_LENGTH)]
+        public string? TaxpayerNumber { get; private set; }
 
         /// <summary>Client Discriminator</summary>
         [Required]
