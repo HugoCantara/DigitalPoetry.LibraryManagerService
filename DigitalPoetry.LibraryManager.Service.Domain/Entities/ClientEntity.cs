@@ -3,7 +3,6 @@
     using DigitalPoetry.LibraryManager.Service.Domain.Enumerables;
     using DigitalPoetry.LibraryManager.Service.Domain.Extensions;
 
-    /// <summary>Client Entity</summary>
     public class ClientEntity : PersonEntity
     {
         /// <summary>TaxpayerNumber Property</summary>
